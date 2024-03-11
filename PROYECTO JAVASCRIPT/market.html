@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cesta</title>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Volver</a>
+    </nav>
+    <main>
+        <ul id="marketList">
+            <li><img src="selectecImage"></li>
+        </ul>
+        <button>Comprar</button>
+        <button id="eliminarImagen">No Comprar</button>
+    </main>
+    <footer>
+        <script>
+            const selectecImage = localStorage.getItem("selectedImage");
+            const eliminarImagen = document.getElementById("eliminarImagen");
+
+            eliminarImagen.addEventListener("click", () => {
+            localStorage.removeItem("imagenSeleccionada");
+            });
+        </script>
+    </footer>
+</body>
+</html>

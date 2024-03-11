@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLOG</title>
+
+    <style>
+        @media only screen and (max-width: 768px) {
+            h1 {
+            font-size: 1em;
+            }
+
+            p {
+            font-size: 0.6em;
+            }
+        }
+        @media only screen and (min-width: 769px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            p {
+                font-size: 1em;
+            }
+        }
+        nav {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            border-bottom: 1px solid #ccc;
+            background: linear-gradient(to right, #ffffff, #7c7b7b);
+        }
+        nav a {
+            text-decoration: none;
+            color: #000;
+        }
+        nav a:hover {
+             color: #666;
+        }
+        .idIndex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .articulos{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+            background: linear-gradient(to right, #ffffff, #7c7b7b);
+        }
+
+        .slider {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Inicio</a> <hr>
+        <a href="articulo1.html">Historia de los Sindicatos</a> <hr>
+        <a href="artiuclo2.html">El sindicato de facultativos y profesionales</a>
+    </nav>
+    <main>
+        <h1 class="idIndex">Blog de Sindicatos</h1>
+        <h6 id="fecha"></h6>
+        <article class="articulos">
+            <h3>Orígenes del movimiento obrero: Una mirada profunda</h3>
+            <h5>1.1 Contexto histórico:</h5>
+            <p>A finales del siglo XVIII y principios del XIX, la Revolución Industrial transformó radicalmente las sociedades. La mecanización de la producción y la aparición de las fábricas concentraron a grandes cantidades de trabajadores en condiciones precarias...</p>
+            <a href="articulo1.html">Sigue Aqui</a>
+            <hr>
+        </article>
+        <article class="articulos">
+            <h3>Sindicato de facultativos y profesionales de sanidad pública de la Comunidad Valenciana</h3>
+            <h5>1. Historia del Sindicato SIMAP:</h5>
+            <p>A finales del siglo XVIII y principios del XIX, la Revolución Industrial transformó radicalmente las sociedades. La mecanización de la producción y la aparición de las fábricas concentraron a grandes cantidades de trabajadores en condiciones precarias...</p>
+            <a href="articulo1.html">Sigue Aqui</a>
+            <hr>
+        </article>
+        <article class="articulos">
+            <h3>UGT Unión General de Trabajadores  </h3> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <h5>Proximamente...</h5>
+        </article>
+        <div class="slider">
+            <div class="slide active">
+                <img src="libro1.jpg" alt="Image 1">
+            </div>
+            <div class="slide">
+                <img src="9788490455302.jpg" alt="Image 2">
+            </div>
+            <div class="slide">
+                <img src="5559667177.jpg" alt="Image 3">
+            </div>
+        </div>
+        
+        <button id="addToMarketList">Comprar</button>
+        <script>
+            const slider = document.querySelector('.slider');
+            const slides = slider.querySelectorAll('.slide');
+            const addToMarketListButton = document.getElementById('addToMarketList');
+        
+            let currentSlide = 0;
+        
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.remove('active');
+        
+                    if (i === index) {
+                        slide.classList.add('active');
+                    }
+                });
+            }
+        
+            function nextSlide() {
+                currentSlide++;
+        
+                if (currentSlide >= slides.length) {
+                    currentSlide = 0;
+                }
+        
+                showSlide(currentSlide);
+            }
+        
+            function startSlider() {
+                setInterval(() => {
+                    nextSlide();
+                }, 5000);
+            }
+        
+            function addToMarketList() {
+                const activeSlide = slides[currentSlide];
+                const imageUrl = activeSlide.querySelector('img').src;
+        
+                localStorage.setItem("selectedImage", imageUrl);
+        
+                window.location.href = "market.html";
+            }
+        
+            showSlide(currentSlide);
+            startSlider();
+        
+            addToMarketListButton.addEventListener('click', addToMarketList);
+        </script>
+    </main>
+    <footer>
+        <script>
+            function updateClock() {
+                const currentTime = new Date();
+                const hours = String(currentTime.getHours()).padStart(2, '0');
+                const minutes = String(currentTime.getMinutes()).padStart(2, '0');
+                const seconds = String(currentTime.getSeconds()).padStart(2, '0');
+                document.getElementById('fecha').textContent = `${hours}:${minutes}:${seconds}`;
+            }
+    
+            updateClock();
+            setInterval(updateClock, 1000);
+        </script>
+
+        <p>Autor: José Navarro Romero</p>
+    </footer>
+</body>
+</html>

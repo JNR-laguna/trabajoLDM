@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLOG</title>
+    <style>
+        @media only screen and (max-width: 768px) {
+            h1 {
+            font-size: 1em;
+            }
+
+            p {
+            font-size: 0.6em;
+            }
+            img {
+            height: 10em;
+            width: 10em;
+        }
+        }
+        @media only screen and (min-width: 769px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            p {
+                font-size: 1em;
+            }
+        }
+        nav {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            border-bottom: 1px solid #ccc;
+            background: linear-gradient(to right, #ffffff, #7c7b7b);
+        }
+        nav a {
+            text-decoration: none;
+            color: #000;
+        }
+        nav a:hover {
+             color: #666;
+        }
+        .idIndex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        img {
+            display: block;
+            margin: auto;
+            height: 10em;
+            width: 25em;
+        }
+        .articulos{
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+            background: linear-gradient(to right, #ffffff, #7c7b7b);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Inicio</a> <hr>
+        <a href="articulo1.html">Historia de los Sindicatos</a> <hr>
+        <a href="artiuclo2.html">El sindicato de facultativos y profesionales</a>
+    </nav>
+    <main>
+        <h1 class="idIndex">SIMAP: Sindicato de facultativos y profesionales de sanidad pública de la Comunidad Valenciana</h1>
+        <img alt="imagen sindicato" src="logo-simap-1.png">
+        <h3>Principales contenidos del articulo</h3>
+        <ol>
+            <li>Historia del Sindicato SIMAP</li>
+            <li>Denominación, Logotipo e Imagen Corporativa</li>
+            <li>Estatutos del Sindicato SIMAP</li>
+            <li>Dato Curioso sobre la Regulación del Estatuto del Sindicato</li>
+        </ol>
+        <article class="articulos">
+            <h3>1. Historia del Sindicato SIMAP:</h3>
+            <p>El Sindicato Independiente de Médicos de Atención Primaria (SIMAP) se fundó en el año 1988 en la Comunidad Autónoma de Madrid por un grupo de médicos de familia que buscaban mejorar las condiciones laborales y defender los derechos de los profesionales de la atención primaria. Desde entonces, el sindicato ha experimentado un crecimiento constante, extendiendo su presencia a otras comunidades autónomas como Andalucía, Castilla-La Mancha, Cataluña, Comunidad Valenciana y Murcia.</p>
+        </article>
+        <article class="articulos">
+            <h3>2. Denominación, Logotipo e Imagen Corporativa:</h3>
+            <p>Denominación: Sindicato Independiente de Médicos de Atención Primaria (SIMAP)
+                Logotipo: El logotipo del SIMAP está compuesto por las siglas del sindicato en color azul marino sobre un fondo blanco. Las letras "SIMAP" aparecen en mayúsculas y en una tipografía sans-serif moderna.
+                Imagen corporativa: La imagen corporativa del SIMAP se caracteriza por el uso del color azul marino como color principal, que transmite profesionalidad, confianza y estabilidad.
+                </p>
+        </article>
+        <article class="articulos">
+            <h3>3. Estatutos del Sindicato SIMAP:</h3>
+            <p>Los estatutos del SIMAP definen la estructura, el funcionamiento y los objetivos del sindicato. Algunos aspectos relevantes de los estatutos son:</p>
+            <ul>
+                <li>Ámbito de aplicación: El SIMAP se configura como un sindicato de ámbito sectorial, representando a los médicos de atención primaria del sector público.</li>
+                <li>Objetivos: Los objetivos del SIMAP incluyen la defensa de los derechos de los médicos de atención primaria, la mejora de las condiciones laborales, la promoción de la calidad asistencial y la participación en la gestión sanitaria.</li>
+                <li>Estructura: El SIMAP se estructura en órganos de gobierno, como la Asamblea General, la Comisión Ejecutiva y los Comités Provinciales.</li>
+            </ul>
+        </article>
+        <article class="articulos">
+            <h3>4. Dato Curioso sobre la Regulación del Estatuto del Sindicato:</h3>
+            <p>Un dato curioso es que el estatuto del SIMAP establece la figura del "Médico Defensor", un profesional que se encarga de asesorar y defender a los médicos afiliados al sindicato en caso de conflictos o problemas con la administración sanitaria.</p>
+        </article>
+    </main>
+    <footer>
+        <p>Autor: José Navarro Romero</p>
+    </footer>
+</body>
+</html>
