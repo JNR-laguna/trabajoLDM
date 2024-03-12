@@ -11,18 +11,19 @@
     </nav>
     <main>
         <ul id="marketList">
-            <li><img src="selectecImage"></li>
+            <li><img src="localStorage.getItem('selectedImage')"></li>
         </ul>
         <button>Comprar</button>
         <button id="eliminarImagen">No Comprar</button>
     </main>
     <footer>
         <script>
-            const selectecImage = localStorage.getItem("selectedImage");
+            const selectecImage = localStorage.getItem('selectedImage');
             const eliminarImagen = document.getElementById("eliminarImagen");
 
             eliminarImagen.addEventListener("click", () => {
             localStorage.removeItem("imagenSeleccionada");
+            window.location.href = "index.html";
             });
         </script>
     </footer>
